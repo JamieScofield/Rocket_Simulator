@@ -22,3 +22,6 @@ class TestEquations(TestCase):
         initial_y_speed = 10
         self.assertEquals(0.19, self.equations.calculate_speed_along_y_axis(initial_y_speed))
 
+    def test_calculate_vertical_position_along_y_axis_returns_correct_value(self):
+        initial_y_velocity = 10
+        self.assertEquals(5.095, self.equations.calculate_vertical_position_along_y_axis(initial_y_velocity))
