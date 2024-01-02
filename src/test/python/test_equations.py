@@ -8,8 +8,17 @@ class TestEquations(TestCase):
     def setUp(self):
         self.equations = Equations()
 
-    def test_calculate_speed(self):
+    def test_calculate_horizontal_speed(self):
 
-       initial_speed = 2
+       initial_x_speed = 2
 
-       self.assertEquals(2, self.equations.calculate_distance_along_x_axis(initial_speed))
+       self.assertEquals(2, self.equations.calculate_speed_along_x_axis(initial_x_speed))
+
+    def test_calculate_vertical_speed_with_equal_velocity_to_acceleration(self):
+        initial_y_speed = 9.81
+        self.assertEquals(0, self.equations.calculate_speed_along_y_axis(initial_y_speed))
+
+    def test_calculate_vertical_speed_with_greater_velocity_to_acceleration(self):
+        initial_y_speed = 10
+        self.assertEquals(0.19, self.equations.calculate_speed_along_y_axis(initial_y_speed))
+
