@@ -11,8 +11,8 @@ class Equations:
 
     def calculate_speed_along_y_axis(self, initial_y_speed: float):
         result = initial_y_speed + self.gravitational_acceleration
-        return round(result, 3)
+        return result
 
     def calculate_vertical_position_along_y_axis(self, y_velocity: float):
         result = y_velocity + (self.gravitational_acceleration/2)
-        return round(result, 3)
+        return result

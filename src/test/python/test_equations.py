@@ -4,7 +4,6 @@ from equations import Equations
 
 
 class TestEquations(TestCase):
-#almost equals  a, b ,  epsilon
     def setUp(self):
         self.equations = Equations()
 
@@ -16,12 +15,12 @@ class TestEquations(TestCase):
 
     def test_calculate_vertical_speed_with_equal_velocity_to_acceleration(self):
         initial_y_speed = 9.81
-        self.assertEquals(0, self.equations.calculate_speed_along_y_axis(initial_y_speed))
+        self.assertAlmostEquals(0, self.equations.calculate_speed_along_y_axis(initial_y_speed), 3)
 
     def test_calculate_vertical_speed_with_greater_velocity_to_acceleration(self):
         initial_y_speed = 10
-        self.assertEquals(0.19, self.equations.calculate_speed_along_y_axis(initial_y_speed))
+        self.assertAlmostEquals(0.19, self.equations.calculate_speed_along_y_axis(initial_y_speed), 3)
 
     def test_calculate_vertical_position_along_y_axis_returns_correct_value(self):
         initial_y_velocity = 10
-        self.assertEquals(5.095, self.equations.calculate_vertical_position_along_y_axis(initial_y_velocity))
+        self.assertAlmostEquals(5.095, self.equations.calculate_vertical_position_along_y_axis(initial_y_velocity), 3)
