@@ -1,5 +1,5 @@
 from environment import Environment
 from equations import Equations
 
-env = Environment(5, 10)
-env.run_simulation()
+env = Environment(100, 100, 25)
+env.run_environment()

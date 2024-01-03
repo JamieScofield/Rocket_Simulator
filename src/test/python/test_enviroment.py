@@ -13,7 +13,7 @@ class TestEnvironment(TestCase):
         self.initial_y_speed = 98.1
         self.max_time = 10
         self.env = Environment(self.initial_x_speed, self.initial_y_speed, self.max_time)
-        self.env.run_simulation()
+        self.env.run_environment()
 
     def test_run_simulation_returns_correct_horizontal_position(self):
         expected_x_positions = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]
