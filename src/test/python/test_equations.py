@@ -4,7 +4,7 @@ from equations import Equations
 
 
 class TestEquations(TestCase):
-
+#almost equals  a, b ,  epsilon
     def setUp(self):
         self.equations = Equations()
 
