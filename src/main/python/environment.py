@@ -27,7 +27,7 @@ class Environment:
             initial_y_position += new_y
 
             self.x_points_per_sec.append(initial_x_position)
-            self.y_points_per_sec.append(round(initial_y_position, 3))
+            self.y_points_per_sec.append(initial_y_position)
 
             time += 1
 

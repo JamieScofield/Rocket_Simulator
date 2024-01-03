@@ -22,5 +22,9 @@ class TestEnvironment(TestCase):
 
     def test_run_simulation_returns_correct_vertical_position(self):
         expected_y_positions = [93.195, 176.58, 250.155, 313.92, 367.875, 412.02, 446.355, 470.88, 485.595, 490.5]
+        actual_y_positions = self.env.y_points_per_sec
+        rounded_actual_y_positions = []
+        for position in actual_y_positions:
+            rounded_actual_y_positions.append(round(position, 3))
 
-        self.assertEquals(expected_y_positions, self.env.y_points_per_sec)
+        self.assertEquals(expected_y_positions, rounded_actual_y_positions)
