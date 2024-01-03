@@ -38,6 +38,8 @@ class Environment:
 
             time += 1
 
+            if initial_y_position < 0:
+                break
     def _creating_plot(self):
         positional_x_axis_array = np.array(self.x_points_per_sec)
         positional_y_axis_array = np.array(self.y_points_per_sec)
