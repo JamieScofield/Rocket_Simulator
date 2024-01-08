@@ -12,6 +12,8 @@ class TestEnvironment(TestCase):
         self.initial_y_speed = 98.1
         self.max_time = 10
         self.env = Environment(self.initial_x_speed, self.initial_y_speed, self.max_time)
+        self.env.creating_plot = Mock()
+        self.env.creating_plot.return_value = None
         self.env.run_environment()
 
     def test_run_simulation_returns_correct_horizontal_position(self):
