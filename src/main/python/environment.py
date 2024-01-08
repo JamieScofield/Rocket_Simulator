@@ -17,8 +17,6 @@ class Environment:
         self.simulation()
         self._creating_plot()
 
-
-
     def simulation(self):
         time = 0
         initial_x_position = 0
