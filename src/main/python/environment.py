@@ -12,6 +12,7 @@ class Environment:
         self.y_speed = y_speed
         self.x_points_per_sec = []
         self.y_points_per_sec = []
+        
     def run_environment(self):
         self.simulation()
         self._creating_plot()
