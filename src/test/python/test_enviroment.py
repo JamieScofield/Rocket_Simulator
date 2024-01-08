@@ -2,7 +2,6 @@ from unittest import TestCase
 from unittest.mock import Mock
 
 from environment import Environment
-from equations import Equations
 
 
 class TestEnvironment(TestCase):
