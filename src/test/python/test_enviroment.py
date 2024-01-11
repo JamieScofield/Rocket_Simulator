@@ -13,7 +13,7 @@ class TestEnvironment(TestCase):
         # mock objects
         self.equations = Equations()
         self.resolving_vectors = Mock()
-        self.env.creating_plot = Mock()
+
 
         # mock objects return values
         self.resolving_vectors.resolve_initial_input_velocity = Mock()
@@ -22,6 +22,7 @@ class TestEnvironment(TestCase):
         # variables inputs into env
         self.max_time = 10
         self.env = Environment(self.max_time, self.resolving_vectors, self.equations)
+        self.env.creating_plot = Mock()
         self.env.creating_plot.return_value = None
 
         # running env
