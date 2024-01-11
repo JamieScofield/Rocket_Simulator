@@ -2,16 +2,20 @@ from equations import Equations
 import numpy as np
 import matplotlib.pyplot as plt
 
+from resolving_vectors import ResolvingVectors
+
 
 class Environment:
 
-    def __init__(self, x_speed, y_speed, max_time):
-        self.equations = Equations()
+    def __init__(self, max_time, resolving_vectors: ResolvingVectors, equations: Equations):
+        self.equations = equations
+        self.resolving_vectors = resolving_vectors
         self.max_time = max_time
-        self.x_speed = x_speed
-        self.y_speed = y_speed
         self.x_points_per_sec = []
         self.y_points_per_sec = []
+        self._initial_resolved_x_velocity = resolving_vectors.resolve_initial_input_velocity()[0]
+        self._initial_resolved_y_velocity = resolving_vectors.resolve_initial_input_velocity()[1]
+
         
     def run_environment(self):
         self.simulation()
@@ -21,10 +25,10 @@ class Environment:
         time = 0
         initial_x_position = 0
         initial_y_position = 0
-        y_velocity = self.y_speed
+        y_velocity = self._initial_resolved_y_velocity
 
         while time < self.max_time:
-            new_x = self.equations.calculate_speed_along_x_axis(self.x_speed)
+            new_x = self.equations.calculate_speed_along_x_axis(self._initial_resolved_x_velocity)
 
             new_y = self.equations.calculate_vertical_position_along_y_axis(y_velocity)
             y_velocity = self.equations.calculate_speed_along_y_axis(y_velocity)
