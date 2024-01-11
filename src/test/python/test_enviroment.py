@@ -20,7 +20,6 @@ class TestEnvironment(TestCase):
         self.resolving_vectors.resolve_initial_input_velocity.return_value = np.array([70.711, 70.711])
 
         # variables inputs into env
-
         self.max_time = 10
         self.env = Environment(self.max_time, self.resolving_vectors, self.equations)
         self.env.creating_plot.return_value = None
