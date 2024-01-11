@@ -19,7 +19,7 @@ class Environment:
         
     def run_environment(self):
         self.simulation()
-        self._creating_plot()
+        self.creating_plot()
 
     def simulation(self):
         time = 0
@@ -43,7 +43,7 @@ class Environment:
 
             if initial_y_position < 0:
                 break
-    def _creating_plot(self):
+    def creating_plot(self):
         positional_x_axis_array = np.array(self.x_points_per_sec)
         positional_y_axis_array = np.array(self.y_points_per_sec)
 
