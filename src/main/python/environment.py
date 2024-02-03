@@ -48,4 +48,5 @@ class Environment:
         positional_y_axis_array = np.array(self.y_points_per_sec)
 
         plt.plot(positional_x_axis_array, positional_y_axis_array)
+        plt.grid(zorder=0)
         plt.show()
